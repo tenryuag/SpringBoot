@@ -1,6 +1,6 @@
-package med.voll.api.consulta;
+package med.voll.api.domain.consulta;
 
-import med.voll.api.consulta.validaciones.ValidadorDeConsultas;
+import med.voll.api.domain.consulta.validaciones.ValidadorDeConsultas;
 import med.voll.api.domain.medico.Medico;
 import med.voll.api.domain.medico.MedicoRepository;
 import med.voll.api.domain.paciente.PacienteRepository;
@@ -33,7 +33,6 @@ public class AgendaDeConsultaService {
             throw new ValidacionDeIntegridad("este id para el medico no fue encontrado");
         }
 
-        //Validaciones
         validadores.forEach(v -> v.validar(datos));
 
         var paciente = pacienteRepository.findById(datos.idPaciente()).get();

@@ -35,19 +35,6 @@ public class SecurityConfiguration {
                 .build();
     }
 
-//    @Bean
-//    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-//        return httpSecurity.csrf().disable()
-//                .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-//                .authorizeHttpRequests(auth -> auth.requestMatchers("HttpMethod.POST", "/login").permitAll()
-//                        .requestMatchers("/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**").permitAll()
-//                        .requestMatchers(HttpMethod.DELETE, "/medicos").hasRole("ADMIN")
-//                        .requestMatchers(HttpMethod.DELETE, "/pacientes").hasRole("ADMIN")
-//                        .anyRequest().authenticated())
-//                .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
-//                .build();
-//    }
-
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
